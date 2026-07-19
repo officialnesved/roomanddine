@@ -33,6 +33,16 @@ body {
   font-family: var(--font-sans);
 }
 
+/* Smooth-scrolls the whole page for in-page nav anchors (#features, #how-it-works, etc.) instead
+   of an instant jump. scroll-margin-top offsets the landing position by the sticky header's height
+   (h-16 = 64px, plus a little breathing room) so the section title isn't hidden behind it. */
+html {
+  scroll-behavior: smooth;
+}
+section[id] {
+  scroll-margin-top: 84px;
+}
+
 /* The hero's signature background — pixel-sampled from the Clearbit reference, which is NOT a flat
    pale blue but a rich diagonal wash: white at top-left, a saturated violet glow (#7d5eef) through
    the centre, then blue, then a cyan/teal corner at bottom-right. Built as layered radial glows

@@ -1,15 +1,12 @@
 import { Check } from 'lucide-react'
 import { PLANS } from '../plans'
 import { APP_URL } from '../config'
-import { useDemoModal } from '../context/DemoModalContext'
 
 function fmt(n: number) {
   return n.toLocaleString('en-IN')
 }
 
 export function Pricing() {
-  const openDemo = useDemoModal()
-
   return (
     <section id="pricing" className="bg-slate-50 py-20">
       <div className="mx-auto max-w-6xl px-5">
@@ -67,9 +64,9 @@ export function Pricing() {
         </div>
         <p className="mt-8 text-center text-sm text-slate-500">
           Not sure which plan fits?{' '}
-          <button type="button" onClick={openDemo} className="font-semibold text-accent-600 underline hover:text-accent-700">
-            Book a demo
-          </button>{' '}
+          <a href="#contact" className="font-semibold text-accent-600 underline hover:text-accent-700">
+            Contact us
+          </a>{' '}
           and we'll help you decide.
         </p>
         <p className="mt-2 text-center text-xs text-slate-500">Prices exclusive of applicable taxes. Cancel anytime.</p>

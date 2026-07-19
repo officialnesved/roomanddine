@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { APP_URL } from '../config'
-import { useDemoModal } from '../context/DemoModalContext'
 
 const NAV = [
   { href: '#features', label: 'Features' },
@@ -14,7 +13,6 @@ const NAV = [
 
 export function Header() {
   const [open, setOpen] = useState(false)
-  const openDemo = useDemoModal()
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
@@ -32,22 +30,15 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-3 md:flex">
           <a
             href={APP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold text-accent-700 hover:text-accent-900"
+            className="rounded-full border border-accent-700 px-5 py-2 text-sm font-bold text-accent-700 hover:bg-accent-50"
           >
             Login
           </a>
-          <button
-            type="button"
-            onClick={openDemo}
-            className="text-sm font-semibold text-accent-700 hover:text-accent-900"
-          >
-            Book a Demo
-          </button>
           <a
             href={APP_URL}
             target="_blank"
@@ -81,20 +72,10 @@ export function Header() {
                 href={APP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-slate-300 px-4 py-2 text-center text-sm font-semibold text-slate-700"
+                className="rounded-full border border-accent-700 px-4 py-2 text-center text-sm font-bold text-accent-700"
               >
                 Login
               </a>
-              <button
-                type="button"
-                onClick={() => {
-                  setOpen(false)
-                  openDemo()
-                }}
-                className="rounded-lg border border-slate-300 px-4 py-2 text-center text-sm font-semibold text-slate-700"
-              >
-                Book a Demo
-              </button>
               <a
                 href={APP_URL}
                 target="_blank"

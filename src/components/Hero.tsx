@@ -1,6 +1,5 @@
 import { ArrowRight, BedDouble, UtensilsCrossed, TrendingUp } from 'lucide-react'
 import { APP_URL } from '../config'
-import { useDemoModal } from '../context/DemoModalContext'
 
 // A loose cloud of dots with a few connecting lines, each dot twinkling independently — sits
 // centrally behind the headline/card, same placement as the reference, rather than tucked in one
@@ -107,8 +106,6 @@ function PreviewCard() {
 }
 
 export function Hero() {
-  const openDemo = useDemoModal()
-
   return (
     <section className="hero-bg relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
@@ -137,13 +134,6 @@ export function Hero() {
             >
               Get Started <ArrowRight className="h-4.5 w-4.5" />
             </a>
-            <button
-              type="button"
-              onClick={openDemo}
-              className="text-base font-semibold text-accent-700 underline decoration-accent-300 decoration-2 underline-offset-4 hover:text-accent-900"
-            >
-              or Book a Demo
-            </button>
           </div>
         </div>
 
