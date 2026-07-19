@@ -1,4 +1,4 @@
-import { ArrowRight, BedDouble, UtensilsCrossed, TrendingUp } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { APP_URL } from '../config'
 
 // A loose cloud of dots with a few connecting lines, each dot twinkling independently — sits
@@ -34,73 +34,37 @@ function DotField() {
   )
 }
 
-function PreviewCard() {
+// Chrome bar (three dots) around each real product screenshot — the standard "browser window"
+// framing device that makes a raw screenshot read as a polished app preview rather than a flat
+// image dropped on the page.
+function ScreenshotFrame({ src, alt, className }: { src: string; alt: string; className?: string }) {
   return (
-    <div className="animate-float-slow relative rounded-2xl border border-slate-100 bg-white p-4 shadow-2xl shadow-accent-300/40">
-      <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
-        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent-500">
-          <BedDouble className="h-3.5 w-3.5 text-white" />
-        </div>
-        <span className="text-sm font-bold text-accent-700">Shivar Garden Resort</span>
+    <div className={`overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl shadow-accent-500/20 ${className ?? ''}`}>
+      <div className="flex items-center gap-1.5 border-b border-slate-100 bg-slate-50 px-3 py-2.5">
+        <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
+        <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+        <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
       </div>
+      <img src={src} alt={alt} className="block w-full" />
+    </div>
+  )
+}
 
-      <div className="mt-3 flex gap-1.5">
-        <span className="rounded-full bg-accent-100 px-3 py-1 text-xs font-semibold text-accent-700">Rooms</span>
-        <span className="rounded-full px-3 py-1 text-xs font-semibold text-slate-500">Restaurant</span>
-      </div>
-
-      <div className="mt-3 rounded-xl bg-slate-50 p-3">
-        <div className="flex items-center justify-between text-xs">
-          <span className="font-semibold text-slate-500">Revenue this week</span>
-          <span className="flex items-center gap-1 font-bold text-emerald-600">
-            <TrendingUp className="h-3 w-3" /> +18%
-          </span>
-        </div>
-        <svg viewBox="0 0 180 50" className="mt-2 h-12 w-full">
-          <defs>
-            <linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#637eff" stopOpacity="0.35" />
-              <stop offset="100%" stopColor="#637eff" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-          <polygon points="0,40 25,32 50,35 75,20 100,24 125,10 150,14 180,4 180,50 0,50" fill="url(#chart-fill)" />
-          <polyline
-            points="0,40 25,32 50,35 75,20 100,24 125,10 150,14 180,4"
-            fill="none"
-            stroke="#637eff"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          {[0, 25, 50, 75, 100, 125, 150, 180].map((x, i) => (
-            <circle key={x} cx={x} cy={[40, 32, 35, 20, 24, 10, 14, 4][i]} r="2.5" fill="#637eff" />
-          ))}
-        </svg>
-      </div>
-
-      <div className="mt-3 flex flex-wrap gap-1.5">
-        {['Hotels', 'Banquet Halls', 'Restaurants'].map((t) => (
-          <span key={t} className="rounded-full border border-slate-200 px-2.5 py-1 text-[11px] font-medium text-slate-600">
-            {t}
-          </span>
-        ))}
-      </div>
-
-      <div className="mt-3 border-t border-slate-100 pt-3">
-        <div className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-slate-400">Recent Activity</div>
-        {[
-          { icon: BedDouble, label: 'Room 101 booked', time: '2m ago', tone: 'text-accent-600 bg-accent-50' },
-          { icon: UtensilsCrossed, label: 'Table 4 order placed', time: '6m ago', tone: 'text-amber-600 bg-amber-50' },
-        ].map((row) => (
-          <div key={row.label} className="flex items-center gap-2 py-1">
-            <span className={`flex h-6 w-6 items-center justify-center rounded-md ${row.tone}`}>
-              <row.icon className="h-3 w-3" />
-            </span>
-            <span className="flex-1 text-xs font-medium text-slate-700">{row.label}</span>
-            <span className="text-[11px] text-slate-400">{row.time}</span>
-          </div>
-        ))}
-      </div>
+function ProductPreview() {
+  return (
+    <div className="relative mx-auto w-full max-w-lg">
+      {/* secondary screenshot peeking out behind, top-right */}
+      <ScreenshotFrame
+        src="/screenshots/restaurant-overview.png"
+        alt="RoomAndDine restaurant overview — revenue, orders, and table status"
+        className="animate-float-fast absolute -right-6 -top-10 hidden w-[78%] rotate-2 sm:block"
+      />
+      {/* primary screenshot in front */}
+      <ScreenshotFrame
+        src="/screenshots/dashboard.png"
+        alt="RoomAndDine dashboard — bookings, revenue, and enquiries at a glance"
+        className="animate-float-slow relative -rotate-1"
+      />
     </div>
   )
 }
@@ -112,7 +76,7 @@ export function Hero() {
         <DotField />
       </div>
 
-      <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-5 py-20 md:py-28 lg:grid-cols-2">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-5 py-20 md:py-28 lg:grid-cols-[1fr_1.15fr]">
         <div className="animate-fade-in-up text-center lg:text-left">
           <h1 className="text-5xl font-extrabold leading-[1.03] tracking-tight text-accent-700 md:text-6xl">
             Predictable
@@ -137,8 +101,8 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="animate-fade-in-up-delay relative mx-auto w-full max-w-md">
-          <PreviewCard />
+        <div className="animate-fade-in-up-delay relative">
+          <ProductPreview />
         </div>
       </div>
     </section>
