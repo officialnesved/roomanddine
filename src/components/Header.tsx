@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Building2, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { APP_URL } from '../config'
 import { useDemoModal } from '../context/DemoModalContext'
 
@@ -19,13 +19,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <Link to="/" className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-[10px] bg-accent-500">
-            <Building2 className="h-4.5 w-4.5 text-white" strokeWidth={2.25} />
-          </div>
-          <span className="text-lg font-extrabold tracking-tight text-accent-700">
-            Room<span className="font-medium text-slate-500">AndDine</span>
-          </span>
+        <Link to="/" className="flex items-center gap-2" aria-label="RoomAndDine home">
+          <img src="/logo-mark.png" alt="" className="h-8 w-auto" />
+          <img src="/logo-wordmark.png" alt="RoomAndDine" className="h-5 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
