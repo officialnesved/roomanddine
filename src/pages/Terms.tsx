@@ -2,12 +2,14 @@ import { LegalPage, Placeholder, H2 } from '../components/LegalPage'
 
 export function Terms() {
   return (
-    <LegalPage title="Terms of Service" lastUpdated={<Placeholder>[DATE]</Placeholder>}>
+    <LegalPage title="Terms of Service" lastUpdated="20 July 2026">
       <p>
-        These Terms of Service ("Terms") govern access to and use of RoomAndDine (the "Service"), a hospitality/restaurant
-        management platform provided by <Placeholder>[COMPANY LEGAL NAME]</Placeholder>, a company registered at{' '}
-        <Placeholder>[REGISTERED ADDRESS]</Placeholder> ("we", "us", "our"). By creating an account or using the Service, the
-        venue and its authorized staff ("you", "Customer") agree to these Terms.
+        These Terms of Service ("Terms") govern access to and use of RoomAndDine (the "Service"), available at{' '}
+        <a href="https://roomanddine.com" className="text-accent-600 underline">roomanddine.com</a> and{' '}
+        <a href="https://app.roomanddine.com" className="text-accent-600 underline">app.roomanddine.com</a>, a
+        hospitality/restaurant management platform provided by <strong>Nesved</strong>, with its registered office at
+        Pimple Saudagar, Pune, Maharashtra 411017, India ("we", "us", "our"). By creating an account or using the Service,
+        the venue and its authorized staff ("you", "Customer") agree to these Terms.
       </p>
 
       <H2>1. The Service</H2>
@@ -39,14 +41,17 @@ export function Terms() {
           jurisdiction.
         </li>
         <li>
-          You can request an export of your data. <Placeholder>[State any usage-based retention/deletion terms here.]</Placeholder>
+          You can request an export of your Customer Data at any time by writing to contact@nesved.com; we aim to provide it
+          within 15 days.
         </li>
       </ul>
 
       <H2>4. Payments and subscriptions</H2>
       <p>
-        Subscription fees are billed through Razorpay, our payment processor — RoomAndDine does not itself store your card,
-        UPI, or bank account details. <Placeholder>[Confirm final billing-cycle, refund/cancellation, and non-payment data-access terms here.]</Placeholder>
+        Plans are billed annually through Razorpay, our payment processor — RoomAndDine does not itself store your card,
+        UPI, or bank account details. New signups receive a 3-day free trial on the plan selected; no charge is made until
+        the trial ends. Fees already paid for the current billing period are non-refundable except where required by law,
+        and you may cancel auto-renewal at any time from Plans & Billing to stop future charges.
       </p>
 
       <H2>5. Acceptable use</H2>
@@ -58,36 +63,35 @@ export function Terms() {
 
       <H2>6. Termination</H2>
       <p>
-        Either party may terminate on <Placeholder>[X days']</Placeholder> notice. On termination, we will make your data
-        available for export for <Placeholder>[X days]</Placeholder> before deletion, unless a longer retention period is
-        legally required.
+        Either party may terminate on 30 days' written notice (email to contact@nesved.com is sufficient from your side). On
+        termination, we will make your Customer Data available for export for 30 days before deletion, except where a
+        longer retention period is legally required (for example, GST/financial records under Indian law).
       </p>
 
       <H2>7. Warranty disclaimer & limitation of liability</H2>
       <p>
-        THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED BY LAW,{' '}
-        <Placeholder>[COMPANY LEGAL NAME]</Placeholder>'S TOTAL LIABILITY ARISING OUT OF THESE TERMS SHALL NOT EXCEED{' '}
-        <Placeholder>[AMOUNT / FEES PAID IN THE PRECEDING 12 MONTHS]</Placeholder>.{' '}
-        <Placeholder>[This clause needs jurisdiction-specific legal review.]</Placeholder>
+        THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED BY LAW, NESVED'S
+        TOTAL LIABILITY ARISING OUT OF THESE TERMS SHALL NOT EXCEED THE FEES YOU PAID FOR THE SERVICE IN THE 12 MONTHS
+        PRECEDING THE CLAIM. <Placeholder>This clause should still get a jurisdiction-specific legal review before relying on it in a dispute.</Placeholder>
       </p>
 
       <H2>8. Governing law</H2>
       <p>
-        These Terms are governed by the laws of <Placeholder>[JURISDICTION]</Placeholder>, and disputes shall be resolved in
-        the courts of <Placeholder>[CITY/COUNTRY]</Placeholder>.
+        These Terms are governed by the laws of India, and disputes shall be subject to the exclusive jurisdiction of the
+        courts at Pune, Maharashtra.
       </p>
 
       <H2>9. Changes to these Terms</H2>
       <p>
-        We may update these Terms; material changes will be notified via <Placeholder>[in-app notice / email]</Placeholder>{' '}
-        at least <Placeholder>[X days]</Placeholder> before taking effect.
+        We may update these Terms; material changes will be notified via email to registered Admin accounts and an in-app
+        notice at least 15 days before taking effect.
       </p>
 
       <H2>10. Contact</H2>
       <p>
-        <Placeholder>[COMPANY LEGAL NAME]</Placeholder>
+        Nesved
         <br />
-        <Placeholder>[REGISTERED ADDRESS]</Placeholder>
+        Pimple Saudagar, Pune, Maharashtra 411017, India
         <br />
         contact@nesved.com · +91 88060 12475
       </p>
