@@ -35,7 +35,7 @@ export function Header() {
             href={APP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-accent-700 px-5 py-2 text-sm font-bold text-accent-700 hover:bg-accent-50"
+            className="rounded-full bg-gradient-to-r from-cta-from to-cta-to px-5 py-2 text-sm font-bold text-white shadow-md shadow-cta-from/30 hover:shadow-lg"
           >
             Login
           </a>
@@ -72,7 +72,7 @@ export function Header() {
                 href={APP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-accent-700 px-4 py-2 text-center text-sm font-bold text-accent-700"
+                className="rounded-full bg-gradient-to-r from-cta-from to-cta-to px-4 py-2 text-center text-sm font-bold text-white shadow-md shadow-cta-from/30"
               >
                 Login
               </a>

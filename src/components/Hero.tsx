@@ -52,7 +52,7 @@ function ScreenshotFrame({ src, alt, className }: { src: string; alt: string; cl
 
 function ProductPreview() {
   return (
-    <div className="relative mx-auto w-full max-w-lg">
+    <div className="relative mx-auto w-full max-w-xl">
       {/* secondary screenshot peeking out behind, top-right */}
       <ScreenshotFrame
         src="/screenshots/restaurant-overview.png"

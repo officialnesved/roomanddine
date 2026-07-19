@@ -22,11 +22,10 @@
   --color-highlight-400: #148cfc;
   --color-highlight-500: #0b7ae0;
 
-  /* Pixel-sampled directly from the reference screenshot's actual CTA button (not one of the 3
-     named swatches — a distinct gradient the designer mixed just for buttons): deep violet on
-     the left fading to a lighter blue on the right, not the muted navy used for text. */
-  --color-cta-from: #3427e1;
-  --color-cta-to: #4a7ff5;
+  /* Matches the CRM app's login/primary-button gradient exactly (linear-gradient(90deg,#4c1d95,
+     #7c3aed)) so the marketing site and the app read as the same product. */
+  --color-cta-from: #4c1d95;
+  --color-cta-to: #7c3aed;
 }
 
 body {
