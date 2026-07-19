@@ -79,11 +79,9 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-5 py-20 md:py-28 lg:grid-cols-[1fr_1.15fr]">
         <div className="animate-fade-in-up text-center lg:text-left">
           <h1 className="text-5xl font-extrabold leading-[1.03] tracking-tight text-accent-700 md:text-6xl">
-            Predictable
+            Rooms and dining,
             <br />
-            operations
-            <br />
-            start here.
+            run as one.
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-slate-600 lg:mx-0">
             RoomAndDine gives you full control over every booking, order, and bill across your property — so you can
