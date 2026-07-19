@@ -22,7 +22,7 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="mx-auto max-w-6xl px-5 py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl" style={{ fontFamily: 'var(--font-serif)' }}>
+        <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
           Up and running, fast
         </h2>
       </div>

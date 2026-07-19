@@ -34,7 +34,7 @@ export function Faq() {
   return (
     <section id="faq" className="bg-slate-50 py-20">
       <div className="mx-auto max-w-3xl px-5">
-        <h2 className="text-center text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl" style={{ fontFamily: 'var(--font-serif)' }}>
+        <h2 className="text-center text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
           Frequently asked questions
         </h2>
         <div className="mt-10 flex flex-col gap-3">

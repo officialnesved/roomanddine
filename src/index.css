@@ -1,20 +1,86 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Nunito", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-serif: "Fraunces", serif;
+  /* "Eina 01" (the style guide's display face) is a paid/licensed font we can't legally bundle —
+     Inter is the guide's other typeface and is free, so that's what actually ships. */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-  /* Same accent blue as the app, for brand consistency between marketing site and product. */
-  --color-accent-50: #eff6ff;
-  --color-accent-100: #dbeafe;
-  --color-accent-300: #93c5fd;
-  --color-accent-400: #3b82f6;
-  --color-accent-500: #2563eb;
-  --color-accent-600: #1d4ed8;
-  --color-accent-700: #1e40af;
-  --color-accent-900: #1e3a8a;
+  /* Exact brand palette from the style guide: #273266 (dark navy), #637EFF (primary), #148CFC
+     (bright blue accent) — accent-500/600/700 map directly to the guide's button Normal/Hover/
+     Pressed states so every existing accent-* class in the app picks this up automatically. */
+  --color-accent-50: #eef1ff;
+  --color-accent-100: #dfe4ff;
+  --color-accent-300: #a8b4ff;
+  --color-accent-400: #7c8bff;
+  --color-accent-500: #637eff;
+  --color-accent-600: #4c5fe0;
+  --color-accent-700: #273266;
+  --color-accent-900: #1c2450;
+
+  /* The style guide's secondary bright-blue accent (#148CFC) — used sparingly for highlight
+     cards/badges, not as the primary interactive color. */
+  --color-highlight-400: #148cfc;
+  --color-highlight-500: #0b7ae0;
+
+  /* Pixel-sampled directly from the reference screenshot's actual CTA button (not one of the 3
+     named swatches — a distinct gradient the designer mixed just for buttons): deep violet on
+     the left fading to a lighter blue on the right, not the muted navy used for text. */
+  --color-cta-from: #3427e1;
+  --color-cta-to: #4a7ff5;
 }
 
 body {
   font-family: var(--font-sans);
+}
+
+/* The hero's signature background — pixel-sampled from the Clearbit reference, which is NOT a flat
+   pale blue but a rich diagonal wash: white at top-left, a saturated violet glow (#7d5eef) through
+   the centre, then blue, then a cyan/teal corner at bottom-right. Built as layered radial glows
+   over a diagonal base so the violet reads as a soft light source rather than a hard band. */
+.hero-bg {
+  background:
+    radial-gradient(75% 80% at 52% 60%, rgba(125, 94, 239, 0.55) 0%, rgba(125, 94, 239, 0.18) 38%, rgba(125, 94, 239, 0) 62%),
+    radial-gradient(60% 65% at 88% 82%, rgba(150, 210, 245, 0.55) 0%, rgba(150, 210, 245, 0) 55%),
+    radial-gradient(50% 55% at 12% 8%, #ffffff 0%, rgba(255, 255, 255, 0) 60%),
+    linear-gradient(135deg, #ffffff 0%, #f1ecfe 32%, #e7d9fe 58%, #cfe3f7 82%, #e8fcfc 100%);
+}
+
+/* Hero-only floating animations — the dot pattern and the preview card drift gently rather than
+   sitting completely static, matching the reference's subtle motion without being distracting. */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-9px); }
+}
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+.animate-float-fast {
+  animation: float-fast 4.5s ease-in-out infinite;
+}
+
+/* Hero entrance — text and card fade/slide in on page load rather than just appearing, staggered
+   slightly (card comes in after the text) so it reads as one small sequence, not a single flash. */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-fade-in-up-delay {
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.15s;
+}
+
+/* Slow twinkle on the hero's decorative dots so the field isn't perfectly static. */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
 }

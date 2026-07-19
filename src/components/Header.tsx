@@ -23,7 +23,7 @@ export function Header() {
           <div className="flex h-8 w-8 items-center justify-center rounded-[10px] bg-accent-500">
             <Building2 className="h-4.5 w-4.5 text-white" strokeWidth={2.25} />
           </div>
-          <span className="text-lg font-extrabold tracking-tight text-slate-900">
+          <span className="text-lg font-extrabold tracking-tight text-accent-700">
             Room<span className="font-medium text-slate-500">AndDine</span>
           </span>
         </Link>
@@ -36,22 +36,22 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <a href={APP_URL} className="text-sm font-semibold text-slate-700 hover:text-slate-900">
+        <div className="hidden items-center gap-4 md:flex">
+          <a href={APP_URL} className="text-sm font-semibold text-accent-700 hover:text-accent-900">
             Login
           </a>
           <button
             type="button"
             onClick={openDemo}
-            className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+            className="text-sm font-semibold text-accent-700 hover:text-accent-900"
           >
             Book a Demo
           </button>
           <a
             href={APP_URL}
-            className="rounded-lg bg-accent-500 px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-accent-600"
+            className="rounded-full border border-accent-700 px-5 py-2 text-sm font-bold text-accent-700 hover:bg-accent-50"
           >
-            Start Free Trial
+            Get Started
           </a>
         </div>
 
@@ -87,8 +87,8 @@ export function Header() {
               >
                 Book a Demo
               </button>
-              <a href={APP_URL} className="rounded-lg bg-accent-500 px-4 py-2 text-center text-sm font-bold text-white">
-                Start Free Trial
+              <a href={APP_URL} className="rounded-full border border-accent-700 px-4 py-2 text-center text-sm font-bold text-accent-700">
+                Get Started
               </a>
             </div>
           </div>

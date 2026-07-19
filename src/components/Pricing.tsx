@@ -14,7 +14,7 @@ export function Pricing() {
     <section id="pricing" className="bg-slate-50 py-20">
       <div className="mx-auto max-w-6xl px-5">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl" style={{ fontFamily: 'var(--font-serif)' }}>
+          <h2 className="text-3xl font-semibold tracking-tight text-accent-700 md:text-4xl">
             Simple, transparent pricing
           </h2>
           <p className="mt-3 text-lg text-slate-600">Pick only what your property runs — switch plans anytime.</p>
@@ -25,7 +25,9 @@ export function Pricing() {
             <div
               key={p.key}
               className={`relative flex flex-col rounded-2xl border p-7 ${
-                p.recommended ? 'border-transparent bg-accent-500 text-white shadow-xl' : 'border-slate-200 bg-white shadow-sm'
+                p.recommended
+                  ? 'border-transparent bg-gradient-to-br from-cta-from to-cta-to text-white shadow-xl'
+                  : 'border-slate-200 bg-white shadow-sm'
               }`}
             >
               {p.recommended && (
@@ -50,8 +52,10 @@ export function Pricing() {
               </ul>
               <a
                 href={APP_URL}
-                className={`mt-7 rounded-lg px-4 py-2.5 text-center text-sm font-bold ${
-                  p.recommended ? 'bg-white text-accent-600 hover:bg-accent-50' : 'bg-accent-500 text-white hover:bg-accent-600'
+                className={`mt-7 rounded-full px-4 py-2.5 text-center text-sm font-bold ${
+                  p.recommended
+                    ? 'bg-white text-accent-600 hover:bg-accent-50'
+                    : 'bg-gradient-to-r from-cta-from to-cta-to text-white shadow-md shadow-cta-from/30 hover:shadow-lg'
                 }`}
               >
                 Start Free Trial
