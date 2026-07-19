@@ -20,13 +20,13 @@ export function Testimonials() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-accent-700 md:text-4xl">
           Trusted by hospitality teams
         </h2>
       </div>
       <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
         {TESTIMONIALS.map((t) => (
-          <figure key={t.quote} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <figure key={t.quote} className="rounded-2xl border border-accent-100 bg-white p-6 shadow-sm">
             <blockquote className="text-sm leading-relaxed text-slate-700">&ldquo;{t.quote}&rdquo;</blockquote>
             <figcaption className="mt-4 text-xs font-semibold text-slate-500">{t.role}</figcaption>
           </figure>

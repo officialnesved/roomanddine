@@ -37,7 +37,7 @@ export function Features() {
   return (
     <section id="features" className="mx-auto max-w-6xl px-5 py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-accent-700 md:text-4xl">
           Everything one property needs
         </h2>
         <p className="mt-3 text-lg text-slate-600">No more juggling a booking register, a POS, and a spreadsheet for expenses.</p>
@@ -45,8 +45,8 @@ export function Features() {
 
       <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {FEATURES.map((f) => (
-          <div key={f.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-50 text-accent-600">
+          <div key={f.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md hover:shadow-accent-500/10">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cta-from to-cta-to text-white">
               <f.icon className="h-5.5 w-5.5" />
             </div>
             <h3 className="mt-4 text-base font-bold text-slate-900">{f.title}</h3>

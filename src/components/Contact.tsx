@@ -6,10 +6,10 @@ const SUPPORT_PHONE = '+91 88060 12475'
 
 export function Contact() {
   return (
-    <section id="contact" className="bg-slate-50 py-20">
+    <section id="contact" className="bg-accent-50/60 py-20">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-5 md:grid-cols-2 md:items-start">
         <div>
-          <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-accent-700 md:text-4xl">
             Questions before you start?
           </h2>
           <p className="mt-3 max-w-md text-slate-600">

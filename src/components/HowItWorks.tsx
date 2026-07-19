@@ -22,7 +22,7 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="mx-auto max-w-6xl px-5 py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-accent-700 md:text-4xl">
           Up and running, fast
         </h2>
       </div>
@@ -31,7 +31,7 @@ export function HowItWorks() {
         <div className="absolute left-0 right-0 top-6 hidden h-px bg-slate-200 md:block" />
         {STEPS.map((s, i) => (
           <div key={s.title} className="relative flex flex-col items-center text-center md:items-start md:text-left">
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-accent-500 text-white shadow-md shadow-accent-500/30">
+            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-cta-from to-cta-to text-white shadow-md shadow-cta-from/30">
               <s.icon className="h-5.5 w-5.5" />
             </div>
             <div className="mt-4 text-xs font-bold uppercase tracking-wide text-accent-600">Step {i + 1}</div>

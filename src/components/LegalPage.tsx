@@ -20,7 +20,7 @@ export function LegalPage({ title, lastUpdated, children }: { title: string; las
         </div>
       </div>
 
-      <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
+      <h1 className="text-3xl font-extrabold tracking-tight text-accent-700">
         {title}
       </h1>
       <p className="mt-2 text-sm text-slate-500">Last updated: {lastUpdated}</p>
