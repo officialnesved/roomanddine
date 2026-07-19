@@ -57,7 +57,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="flex w-full items-center justify-center gap-2 rounded-lg bg-accent-500 px-4 py-2.5 text-sm font-bold text-white hover:bg-accent-600 disabled:opacity-60"
+        className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cta-from to-cta-to px-4 py-2.5 text-sm font-bold text-white shadow-md shadow-cta-from/30 hover:shadow-lg disabled:opacity-60"
       >
         {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : result?.ok ? <CheckCircle2 className="h-4 w-4" /> : null}
         {submitting ? 'Sending…' : 'Send Message'}
