@@ -52,6 +52,8 @@ export function Pricing() {
               </ul>
               <a
                 href={APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`mt-7 rounded-full px-4 py-2.5 text-center text-sm font-bold ${
                   p.recommended
                     ? 'bg-white text-accent-600 hover:bg-accent-50'

@@ -15,6 +15,8 @@ export function CtaBand() {
         <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
             href={APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cta-from to-cta-to px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-cta-from/30 hover:shadow-xl"
           >
             Start Free Trial <ArrowRight className="h-4.5 w-4.5" />

@@ -131,6 +131,8 @@ export function Hero() {
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
             <a
               href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cta-from to-cta-to px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-cta-from/30 transition hover:shadow-xl hover:shadow-cta-from/40"
             >
               Get Started <ArrowRight className="h-4.5 w-4.5" />

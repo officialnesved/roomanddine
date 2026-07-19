@@ -33,7 +33,12 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 md:flex">
-          <a href={APP_URL} className="text-sm font-semibold text-accent-700 hover:text-accent-900">
+          <a
+            href={APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold text-accent-700 hover:text-accent-900"
+          >
             Login
           </a>
           <button
@@ -45,6 +50,8 @@ export function Header() {
           </button>
           <a
             href={APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full border border-accent-700 px-5 py-2 text-sm font-bold text-accent-700 hover:bg-accent-50"
           >
             Get Started
@@ -70,7 +77,12 @@ export function Header() {
               </a>
             ))}
             <div className="mt-2 flex flex-col gap-2 border-t border-slate-200 pt-4">
-              <a href={APP_URL} className="rounded-lg border border-slate-300 px-4 py-2 text-center text-sm font-semibold text-slate-700">
+              <a
+                href={APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border border-slate-300 px-4 py-2 text-center text-sm font-semibold text-slate-700"
+              >
                 Login
               </a>
               <button
@@ -83,7 +95,12 @@ export function Header() {
               >
                 Book a Demo
               </button>
-              <a href={APP_URL} className="rounded-full border border-accent-700 px-4 py-2 text-center text-sm font-bold text-accent-700">
+              <a
+                href={APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-accent-700 px-4 py-2 text-center text-sm font-bold text-accent-700"
+              >
                 Get Started
               </a>
             </div>
