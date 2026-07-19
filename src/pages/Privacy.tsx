@@ -1,4 +1,4 @@
-import { LegalPage, Placeholder, H2 } from '../components/LegalPage'
+import { LegalPage, H2 } from '../components/LegalPage'
 
 export function Privacy() {
   return (
@@ -98,9 +98,6 @@ export function Privacy() {
         Pimple Saudagar, Pune, Maharashtra 411017, India
         <br />
         contact@nesved.com · +91 88060 12475
-      </p>
-      <p className="text-sm text-slate-500">
-        <Placeholder>India's DPDPA requires a named Grievance Officer (not just a company contact) — appoint a specific person and update this section with their name before relying on this for DPDPA compliance.</Placeholder>
       </p>
     </LegalPage>
   )

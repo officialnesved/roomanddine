@@ -1,4 +1,4 @@
-import { LegalPage, Placeholder, H2 } from '../components/LegalPage'
+import { LegalPage, H2 } from '../components/LegalPage'
 
 export function Terms() {
   return (
@@ -72,7 +72,7 @@ export function Terms() {
       <p>
         THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED BY LAW, NESVED'S
         TOTAL LIABILITY ARISING OUT OF THESE TERMS SHALL NOT EXCEED THE FEES YOU PAID FOR THE SERVICE IN THE 12 MONTHS
-        PRECEDING THE CLAIM. <Placeholder>This clause should still get a jurisdiction-specific legal review before relying on it in a dispute.</Placeholder>
+        PRECEDING THE CLAIM.
       </p>
 
       <H2>8. Governing law</H2>
