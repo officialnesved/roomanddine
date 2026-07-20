@@ -18,8 +18,8 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <Link to="/" className="flex items-center gap-2" aria-label="RoomAndDine home">
-          <img src="/logo-mark.png" alt="" className="h-9 w-auto" />
-          <img src="/logo-wordmark.png" alt="RoomAndDine" className="h-9 w-auto" />
+          <img src="/logo-mark.png" alt="" className="h-6 w-auto" />
+          <img src="/logo-wordmark.png" alt="RoomAndDine" className="h-6 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
