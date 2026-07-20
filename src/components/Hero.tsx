@@ -27,8 +27,8 @@ function WaveBackground() {
   )
 }
 
-// Illustrative dashboard mockup matching the design exactly — a stylized preview, not a literal
-// screenshot, so the numbers on it are placeholder UI content rather than a real-data claim.
+// Real product screenshot (not a fake mockup) in the same browser-chrome frame as the design's
+// illustrative version — actual dashboard UI is more credible than a stylized illustration.
 function DashboardMockup() {
   return (
     <div className="relative mx-auto max-w-[960px] animate-float-slow">
@@ -39,46 +39,7 @@ function DashboardMockup() {
           <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
           <span className="ml-3.5 text-xs text-slate-400">app.roomanddine.com/dashboard</span>
         </div>
-        <div className="flex h-[420px]">
-          <div className="hidden w-[200px] flex-col gap-2 bg-[#1e1b2e] p-[22px] sm:flex">
-            <div className="mb-4 flex items-center gap-2.5">
-              <div className="h-[26px] w-[26px] rounded-lg bg-gradient-to-br from-cta-to to-cta-from" />
-              <span className="text-sm font-bold text-white">RoomAndDine</span>
-            </div>
-            <div className="rounded-[9px] bg-gradient-to-r from-cta-to to-cta-from px-3 py-2.5 text-[13px] font-semibold text-white">
-              📊 Dashboard
-            </div>
-            <div className="rounded-[9px] px-3 py-2.5 text-[13px] text-[#c4c0d4]">🛏 Rooms</div>
-            <div className="rounded-[9px] px-3 py-2.5 text-[13px] text-[#c4c0d4]">🎉 Banquets</div>
-            <div className="rounded-[9px] px-3 py-2.5 text-[13px] text-[#c4c0d4]">🍽 Restaurant</div>
-            <div className="rounded-[9px] px-3 py-2.5 text-[13px] text-[#c4c0d4]">📅 Calendar</div>
-          </div>
-          <div className="flex-1 bg-[#f8f7fb] p-6 text-left">
-            <div className="mb-[18px] flex gap-3.5">
-              <div className="flex-1 rounded-[13px] bg-white p-4 shadow-[0_4px_14px_-8px_rgba(0,0,0,0.15)]">
-                <div className="text-xs text-slate-400">Occupancy</div>
-                <div className="text-2xl font-extrabold text-cta-from">86%</div>
-              </div>
-              <div className="flex-1 rounded-[13px] bg-white p-4 shadow-[0_4px_14px_-8px_rgba(0,0,0,0.15)]">
-                <div className="text-xs text-slate-400">Today's revenue</div>
-                <div className="text-2xl font-extrabold text-highlight-500">₹1.24L</div>
-              </div>
-              <div className="hidden flex-1 rounded-[13px] bg-white p-4 shadow-[0_4px_14px_-8px_rgba(0,0,0,0.15)] sm:block">
-                <div className="text-xs text-slate-400">Live tables</div>
-                <div className="text-2xl font-extrabold text-slate-900">18/24</div>
-              </div>
-            </div>
-            <div className="flex h-[220px] items-end gap-3 rounded-[13px] bg-white p-[18px] shadow-[0_4px_14px_-8px_rgba(0,0,0,0.15)]">
-              {[45, 70, 55, 88, 62, 78, 95].map((h, i) => (
-                <div
-                  key={i}
-                  className={`flex-1 rounded-t-[7px] ${i === 3 || i === 6 ? 'bg-gradient-to-t from-highlight-500 to-[#60a5fa]' : 'bg-gradient-to-t from-cta-from to-[#a78bfa]'}`}
-                  style={{ height: `${h}%` }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+        <img src="/screenshots/dashboard.png" alt="RoomAndDine dashboard — bookings, revenue, and enquiries at a glance" className="block w-full" />
       </div>
     </div>
   )
