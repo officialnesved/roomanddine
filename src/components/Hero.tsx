@@ -1,107 +1,119 @@
 import { ArrowRight } from 'lucide-react'
 import { APP_URL } from '../config'
 
-// A loose cloud of dots with a few connecting lines, each dot twinkling independently — sits
-// centrally behind the headline/card, same placement as the reference, rather than tucked in one
-// corner. Positions are hand-placed rather than a perfect grid so it reads as organic texture.
-function DotField() {
-  const dots = [
-    { x: 200, y: 30, r: 3, delay: 0 }, { x: 260, y: 15, r: 2, delay: 0.4 }, { x: 300, y: 60, r: 4, delay: 0.8 },
-    { x: 230, y: 90, r: 2, delay: 1.2 }, { x: 330, y: 30, r: 3, delay: 0.2 }, { x: 280, y: 110, r: 2, delay: 1.6 },
-    { x: 210, y: 140, r: 3, delay: 0.6 }, { x: 260, y: 130, r: 2, delay: 1 }, { x: 320, y: 70, r: 3, delay: 1.4 },
-    { x: 240, y: 160, r: 2, delay: 0.3 }, { x: 350, y: 150, r: 4, delay: 1.8 }, { x: 220, y: 190, r: 2, delay: 0.9 },
-    { x: 190, y: 200, r: 3, delay: 0.5 }, { x: 300, y: 200, r: 2, delay: 1.1 },
-  ]
+// Matches the approved design's exact gradient wave — deep violet to blue, with a faint dot
+// texture — sitting behind the hero content only (not full-bleed across the whole page).
+function WaveBackground() {
   return (
-    <svg className="absolute inset-0 h-full w-full" viewBox="0 0 380 220" fill="none" aria-hidden="true">
-      <line x1="200" y1="30" x2="300" y2="60" stroke="#8b6cf0" strokeWidth="1" opacity="0.45" />
-      <line x1="300" y1="60" x2="330" y2="30" stroke="#8b6cf0" strokeWidth="1" opacity="0.45" />
-      <line x1="230" y1="90" x2="300" y2="60" stroke="#8b6cf0" strokeWidth="1" opacity="0.35" />
-      <line x1="260" y1="130" x2="240" y2="160" stroke="#8b6cf0" strokeWidth="1" opacity="0.35" />
-      <line x1="240" y1="160" x2="300" y2="200" stroke="#8b6cf0" strokeWidth="1" opacity="0.35" />
-      {dots.map((d, i) => (
-        <circle
-          key={i}
-          cx={d.x}
-          cy={d.y}
-          r={d.r}
-          fill={i % 3 === 0 ? '#7d5eef' : '#a89cf5'}
-          className="animate-twinkle"
-          style={{ animationDelay: `${d.delay}s` }}
-        />
-      ))}
+    <svg
+      viewBox="0 0 1440 700"
+      preserveAspectRatio="xMidYMax slice"
+      className="pointer-events-none absolute inset-0 h-full w-full"
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id="heroWave" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stopColor="#6d28d9" />
+          <stop offset="0.5" stopColor="#7c3aed" />
+          <stop offset="1" stopColor="#3b82f6" />
+        </linearGradient>
+        <pattern id="heroDots" width="26" height="26" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="2" fill="#fff" opacity="0.1" />
+        </pattern>
+      </defs>
+      <path fill="url(#heroWave)" d="M0,300 C260,200 520,420 760,380 C1010,338 1180,170 1440,250 L1440,700 L0,700 Z" />
+      <path fill="url(#heroDots)" d="M0,300 C260,200 520,420 760,380 C1010,338 1180,170 1440,250 L1440,700 L0,700 Z" />
     </svg>
   )
 }
 
-// Chrome bar (three dots) around each real product screenshot — the standard "browser window"
-// framing device that makes a raw screenshot read as a polished app preview rather than a flat
-// image dropped on the page.
-function ScreenshotFrame({ src, alt, className }: { src: string; alt: string; className?: string }) {
+// Illustrative dashboard mockup matching the design exactly — a stylized preview, not a literal
+// screenshot, so the numbers on it are placeholder UI content rather than a real-data claim.
+function DashboardMockup() {
   return (
-    <div className={`overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl shadow-accent-500/20 ${className ?? ''}`}>
-      <div className="flex items-center gap-1.5 border-b border-slate-100 bg-slate-50 px-3 py-2.5">
-        <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
-        <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
-        <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
+    <div className="relative mx-auto max-w-[960px] animate-float-slow">
+      <div className="overflow-hidden rounded-[18px] border border-white/60 bg-white shadow-[0_40px_90px_-30px_rgba(30,27,46,0.5)]">
+        <div className="flex items-center gap-1.5 border-b border-slate-100 bg-[#faf9fc] px-[18px] py-3">
+          <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
+          <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+          <span className="ml-3.5 text-xs text-slate-400">app.roomanddine.com/dashboard</span>
+        </div>
+        <div className="flex h-[420px]">
+          <div className="hidden w-[200px] flex-col gap-2 bg-[#1e1b2e] p-[22px] sm:flex">
+            <div className="mb-4 flex items-center gap-2.5">
+              <div className="h-[26px] w-[26px] rounded-lg bg-gradient-to-br from-cta-to to-cta-from" />
+              <span className="text-sm font-bold text-white">RoomAndDine</span>
+            </div>
+            <div className="rounded-[9px] bg-gradient-to-r from-cta-to to-cta-from px-3 py-2.5 text-[13px] font-semibold text-white">
+              📊 Dashboard
+            </div>
+            <div className="rounded-[9px] px-3 py-2.5 text-[13px] text-[#c4c0d4]">🛏 Rooms</div>
+            <div className="rounded-[9px] px-3 py-2.5 text-[13px] text-[#c4c0d4]">🎉 Banquets</div>
+            <div className="rounded-[9px] px-3 py-2.5 text-[13px] text-[#c4c0d4]">🍽 Restaurant</div>
+            <div className="rounded-[9px] px-3 py-2.5 text-[13px] text-[#c4c0d4]">📅 Calendar</div>
+          </div>
+          <div className="flex-1 bg-[#f8f7fb] p-6 text-left">
+            <div className="mb-[18px] flex gap-3.5">
+              <div className="flex-1 rounded-[13px] bg-white p-4 shadow-[0_4px_14px_-8px_rgba(0,0,0,0.15)]">
+                <div className="text-xs text-slate-400">Occupancy</div>
+                <div className="text-2xl font-extrabold text-cta-from">86%</div>
+              </div>
+              <div className="flex-1 rounded-[13px] bg-white p-4 shadow-[0_4px_14px_-8px_rgba(0,0,0,0.15)]">
+                <div className="text-xs text-slate-400">Today's revenue</div>
+                <div className="text-2xl font-extrabold text-highlight-500">₹1.24L</div>
+              </div>
+              <div className="hidden flex-1 rounded-[13px] bg-white p-4 shadow-[0_4px_14px_-8px_rgba(0,0,0,0.15)] sm:block">
+                <div className="text-xs text-slate-400">Live tables</div>
+                <div className="text-2xl font-extrabold text-slate-900">18/24</div>
+              </div>
+            </div>
+            <div className="flex h-[220px] items-end gap-3 rounded-[13px] bg-white p-[18px] shadow-[0_4px_14px_-8px_rgba(0,0,0,0.15)]">
+              {[45, 70, 55, 88, 62, 78, 95].map((h, i) => (
+                <div
+                  key={i}
+                  className={`flex-1 rounded-t-[7px] ${i === 3 || i === 6 ? 'bg-gradient-to-t from-highlight-500 to-[#60a5fa]' : 'bg-gradient-to-t from-cta-from to-[#a78bfa]'}`}
+                  style={{ height: `${h}%` }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-      <img src={src} alt={alt} className="block w-full" />
-    </div>
-  )
-}
-
-function ProductPreview() {
-  return (
-    <div className="relative mx-auto w-full max-w-xl">
-      {/* secondary screenshot peeking out behind, top-right */}
-      <ScreenshotFrame
-        src="/screenshots/restaurant-overview.png"
-        alt="RoomAndDine restaurant overview — revenue, orders, and table status"
-        className="animate-float-fast absolute -right-6 -top-10 hidden w-[78%] rotate-2 sm:block"
-      />
-      {/* primary screenshot in front */}
-      <ScreenshotFrame
-        src="/screenshots/dashboard.png"
-        alt="RoomAndDine dashboard — bookings, revenue, and enquiries at a glance"
-        className="animate-float-slow relative -rotate-1"
-      />
     </div>
   )
 }
 
 export function Hero() {
   return (
-    <section className="hero-bg relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0">
-        <DotField />
-      </div>
+    <section className="relative overflow-hidden bg-white px-5 pb-[120px] pt-[84px] md:pt-[100px]">
+      <WaveBackground />
 
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-5 py-20 md:py-28 lg:grid-cols-[1fr_1.15fr]">
-        <div className="animate-fade-in-up text-center lg:text-left">
-          <h1 className="text-5xl font-extrabold leading-[1.03] tracking-tight text-accent-700 md:text-6xl">
-            Rooms and dining,
-            <br />
-            run as one.
-          </h1>
-          <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-slate-600 lg:mx-0">
-            RoomAndDine gives you full control over every booking, order, and bill across your property — so you can
-            run rooms and restaurant together, more predictably.
-          </p>
-          <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
-            <a
-              href={APP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cta-from to-cta-to px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-cta-from/30 transition hover:shadow-xl hover:shadow-cta-from/40"
-            >
-              Get Started <ArrowRight className="h-4.5 w-4.5" />
-            </a>
-          </div>
+      <div className="relative z-[2] mx-auto max-w-[1120px] text-center">
+        <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-50 px-4 py-[7px] text-[13px] font-semibold text-accent-700">
+          ✨ One platform for your whole property
+        </span>
+        <h1 className="mx-auto max-w-[900px] text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl md:text-[60px] md:leading-[1.05] md:tracking-[-1.5px]">
+          Rooms, banquets &amp; dining —{' '}
+          <span className="bg-gradient-to-r from-cta-from to-highlight-500 bg-clip-text text-transparent">managed as one.</span>
+        </h1>
+        <p className="mx-auto mt-[22px] max-w-[640px] text-lg leading-relaxed text-slate-600">
+          RoomAndDine brings room reservations, banquet events, and restaurant table orders into a single, elegant
+          booking platform your team will actually love.
+        </p>
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-3.5">
+          <a
+            href={APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cta-from to-cta-to px-[30px] py-[15px] text-base font-bold text-white shadow-[0_14px_30px_-10px_rgba(124,58,237,0.6)] transition hover:-translate-y-0.5"
+          >
+            Start free trial <ArrowRight className="h-4.5 w-4.5" />
+          </a>
         </div>
+        <p className="mb-14 mt-4 text-[13.5px] text-slate-400">No credit card required · 3-day free trial</p>
 
-        <div className="animate-fade-in-up-delay relative">
-          <ProductPreview />
-        </div>
+        <DashboardMockup />
       </div>
     </section>
   )

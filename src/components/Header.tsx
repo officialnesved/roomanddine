@@ -5,10 +5,9 @@ import { APP_URL } from '../config'
 
 const NAV = [
   { href: '#features', label: 'Features' },
-  { href: '#how-it-works', label: 'How it Works' },
+  { href: '#solutions', label: 'Solutions' },
   { href: '#pricing', label: 'Pricing' },
   { href: '#faq', label: 'FAQ' },
-  { href: '#contact', label: 'Contact' },
 ]
 
 export function Header() {
@@ -30,12 +29,12 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3.5 md:flex">
           <a
             href={APP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-gradient-to-r from-cta-from to-cta-to px-5 py-2 text-sm font-bold text-white shadow-md shadow-cta-from/30 hover:shadow-lg"
+            className="text-[15px] font-semibold text-slate-600 hover:text-accent-700"
           >
             Login
           </a>
@@ -43,7 +42,7 @@ export function Header() {
             href={APP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-accent-700 px-5 py-2 text-sm font-bold text-accent-700 hover:bg-accent-50"
+            className="rounded-[11px] bg-gradient-to-r from-cta-from to-cta-to px-[22px] py-[11px] text-[15px] font-bold text-white shadow-[0_10px_22px_-8px_rgba(124,58,237,0.5)] transition hover:-translate-y-0.5"
           >
             Get Started
           </a>
@@ -72,7 +71,7 @@ export function Header() {
                 href={APP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-gradient-to-r from-cta-from to-cta-to px-4 py-2 text-center text-sm font-bold text-white shadow-md shadow-cta-from/30"
+                className="rounded-[11px] border border-slate-200 px-4 py-2.5 text-center text-sm font-bold text-slate-700"
               >
                 Login
               </a>
@@ -80,7 +79,7 @@ export function Header() {
                 href={APP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-accent-700 px-4 py-2 text-center text-sm font-bold text-accent-700"
+                className="rounded-[11px] bg-gradient-to-r from-cta-from to-cta-to px-4 py-2.5 text-center text-sm font-bold text-white"
               >
                 Get Started
               </a>

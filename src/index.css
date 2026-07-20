@@ -42,54 +42,11 @@ section[id] {
   scroll-margin-top: 84px;
 }
 
-/* The hero's signature background — pixel-sampled from the Clearbit reference, which is NOT a flat
-   pale blue but a rich diagonal wash: white at top-left, a saturated violet glow (#7d5eef) through
-   the centre, then blue, then a cyan/teal corner at bottom-right. Built as layered radial glows
-   over a diagonal base so the violet reads as a soft light source rather than a hard band. */
-.hero-bg {
-  background:
-    radial-gradient(75% 80% at 52% 60%, rgba(125, 94, 239, 0.55) 0%, rgba(125, 94, 239, 0.18) 38%, rgba(125, 94, 239, 0) 62%),
-    radial-gradient(60% 65% at 88% 82%, rgba(150, 210, 245, 0.55) 0%, rgba(150, 210, 245, 0) 55%),
-    radial-gradient(50% 55% at 12% 8%, #ffffff 0%, rgba(255, 255, 255, 0) 60%),
-    linear-gradient(135deg, #ffffff 0%, #f1ecfe 32%, #e7d9fe 58%, #cfe3f7 82%, #e8fcfc 100%);
-}
-
-/* Hero-only floating animations — the dot pattern and the preview card drift gently rather than
-   sitting completely static, matching the reference's subtle motion without being distracting. */
+/* Hero dashboard mockup drifts gently rather than sitting completely static. */
 @keyframes float-slow {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-14px); }
 }
-@keyframes float-fast {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-9px); }
-}
 .animate-float-slow {
   animation: float-slow 6s ease-in-out infinite;
-}
-.animate-float-fast {
-  animation: float-fast 4.5s ease-in-out infinite;
-}
-
-/* Hero entrance — text and card fade/slide in on page load rather than just appearing, staggered
-   slightly (card comes in after the text) so it reads as one small sequence, not a single flash. */
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-fade-in-up {
-  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.animate-fade-in-up-delay {
-  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: 0.15s;
-}
-
-/* Slow twinkle on the hero's decorative dots so the field isn't perfectly static. */
-@keyframes twinkle {
-  0%, 100% { opacity: 0.35; }
-  50% { opacity: 1; }
-}
-.animate-twinkle {
-  animation: twinkle 3s ease-in-out infinite;
 }

@@ -3,21 +3,35 @@ import { APP_URL } from '../config'
 
 export function CtaBand() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-16 md:py-20">
-      <div className="rounded-3xl bg-gradient-to-br from-cta-from to-cta-to px-8 py-14 text-center shadow-xl shadow-cta-from/25 md:px-16">
-        <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
-          Ready to run your property from one place?
-        </h2>
-        <p className="mx-auto mt-3 max-w-xl text-white/80">Start your free trial today and see it in action.</p>
-        <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <a
-            href={APP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-base font-bold text-accent-700 shadow-lg hover:shadow-xl"
-          >
-            Start Free Trial <ArrowRight className="h-4.5 w-4.5" />
-          </a>
+    <section className="px-5 pb-24">
+      <div className="relative mx-auto max-w-[1080px] overflow-hidden rounded-[28px] bg-gradient-to-br from-cta-from via-cta-to to-highlight-400 px-8 py-[72px] text-center shadow-[0_36px_80px_-30px_rgba(76,29,149,0.6)] md:px-10">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-50"
+          style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 2px, transparent 2px)', backgroundSize: '26px 26px' }}
+        />
+        <div className="relative z-[2]">
+          <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-white md:text-[44px]">
+            Ready to run your whole property from one place?
+          </h2>
+          <p className="mx-auto mb-8 max-w-[520px] text-lg text-white/90">
+            Start your free trial today, no credit card required.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3.5">
+            <a
+              href={APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-[15px] text-base font-extrabold text-cta-from transition hover:-translate-y-0.5"
+            >
+              Start free trial <ArrowRight className="h-4.5 w-4.5" />
+            </a>
+            <a
+              href="#contact"
+              className="rounded-xl border-[1.5px] border-white/35 bg-white/[0.14] px-8 py-[15px] text-base font-bold text-white"
+            >
+              Contact us
+            </a>
+          </div>
         </div>
       </div>
     </section>

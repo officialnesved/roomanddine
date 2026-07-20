@@ -1,36 +1,23 @@
-// PLACEHOLDER CONTENT — replace with real customer quotes once you have some. Deliberately
-// role-labeled ("Restaurant Owner", not a fabricated named person) rather than inventing a named
-// customer that doesn't exist.
-const TESTIMONIALS = [
-  {
-    quote: "We stopped keeping a separate register for bookings and a separate app for the restaurant. Everything's in one place now.",
-    role: 'Hotel Owner, placeholder — replace with a real quote',
-  },
-  {
-    quote: 'GST invoicing that actually matches what we bill guests, without a second tool.',
-    role: 'Restaurant Manager, placeholder — replace with a real quote',
-  },
-  {
-    quote: 'Being able to charge a restaurant order straight to a room bill was the one thing our old system couldn\'t do.',
-    role: 'Banquet Hall Manager, placeholder — replace with a real quote',
-  },
-]
-
+// The approved design shows one large quote attributed to a named person ("Aditi Rao, GM,
+// Grandeur Hotels") — RoomAndDine has no real customers yet, so a named quote would be fabricated.
+// Kept the same big single-quote visual treatment, but role-labeled and explicitly marked as a
+// placeholder instead of inventing a person.
 export function Testimonials() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-20">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-accent-700 md:text-4xl">
-          Trusted by hospitality teams
-        </h2>
-      </div>
-      <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-        {TESTIMONIALS.map((t) => (
-          <figure key={t.quote} className="rounded-2xl border border-accent-100 bg-white p-6 shadow-sm">
-            <blockquote className="text-sm leading-relaxed text-slate-700">&ldquo;{t.quote}&rdquo;</blockquote>
-            <figcaption className="mt-4 text-xs font-semibold text-slate-500">{t.role}</figcaption>
-          </figure>
-        ))}
+    <section className="mx-auto max-w-[820px] px-5 pb-24 pt-14 text-center">
+      <div className="font-serif text-[54px] leading-none text-[#c4b5fd]">&ldquo;</div>
+      <p className="mx-auto mb-7 mt-2 max-w-[680px] text-2xl font-semibold leading-[1.5] tracking-tight text-slate-800">
+        RoomAndDine brings rooms, banquets, and dining into one system — so your team stops juggling separate tools
+        and spreadsheets for every part of the property.
+      </p>
+      <div className="flex items-center justify-center gap-3.5">
+        <div className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-gradient-to-br from-cta-from to-highlight-500 text-sm font-extrabold text-white">
+          ?
+        </div>
+        <div className="text-left">
+          <div className="font-bold text-slate-900">Placeholder quote</div>
+          <div className="text-sm text-slate-400">Replace with a real customer once you have one</div>
+        </div>
       </div>
     </section>
   )

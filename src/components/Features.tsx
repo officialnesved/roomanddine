@@ -1,56 +1,49 @@
-import { CalendarRange, UtensilsCrossed, Boxes, Receipt, Users, BarChart3 } from 'lucide-react'
-
 const FEATURES = [
   {
-    icon: CalendarRange,
-    title: 'Rooms & Bookings',
-    desc: 'Enquiries, quotations, and bookings across rooms, banquet halls, and lawns — with double-booking prevention built in.',
+    emoji: '🛏',
+    bg: 'from-[#ede9fe] to-[#ddd6fe]',
+    title: 'Room bookings',
+    desc: 'Real-time availability, double-booking prevention, check-in/out and quotations — all from one calendar.',
   },
   {
-    icon: UtensilsCrossed,
-    title: 'Restaurant & Dine-in',
-    desc: 'Table management, KOT, food menu, and guest orders — including charging a meal straight to a guest\'s room bill.',
+    emoji: '🎉',
+    bg: 'from-[#e0e7ff] to-[#c7d2fe]',
+    title: 'Banquet & events',
+    desc: 'Manage halls, lawns, quotations and catering packages without a single spreadsheet.',
   },
   {
-    icon: Boxes,
-    title: 'Inventory Management',
-    desc: 'Track vendor & local purchases, usage, and wastage per ingredient, with low-stock alerts and consumption forecasts.',
-  },
-  {
-    icon: Receipt,
-    title: 'GST Invoicing & Billing',
-    desc: 'GST-compliant invoices, receipts, and quotations, with CGST/SGST split and customizable numbering formats.',
-  },
-  {
-    icon: Users,
-    title: 'Staff & Role Access',
-    desc: 'Role-based permissions plus per-staff menu access, so each teammate sees only what their job needs.',
-  },
-  {
-    icon: BarChart3,
-    title: 'Reports & Profitability',
-    desc: 'Revenue, occupancy, and expense reports — split cleanly between your Rooms and Restaurant business lines.',
+    emoji: '🍽',
+    bg: 'from-[#dbeafe] to-[#bfdbfe]',
+    title: 'Restaurant & tables',
+    desc: 'Table management, KOT, food menu and guest orders that flow straight into one revenue view.',
   },
 ]
 
 export function Features() {
   return (
-    <section id="features" className="mx-auto max-w-6xl px-5 py-20">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-accent-700 md:text-4xl">
-          Everything one property needs
+    <section id="features" className="mx-auto max-w-[1160px] px-5 py-24">
+      <div className="mx-auto mb-14 max-w-[640px] text-center">
+        <span className="text-sm font-bold tracking-[1px] text-accent-700">EVERYTHING IN ONE PLACE</span>
+        <h2 className="mb-3.5 mt-3 text-3xl font-extrabold tracking-tight text-slate-900 md:text-[42px]">
+          Built for every corner of your property
         </h2>
-        <p className="mt-3 text-lg text-slate-600">No more juggling a booking register, a POS, and a spreadsheet for expenses.</p>
+        <p className="text-lg leading-relaxed text-slate-600">
+          Three powerful modules, one unified system — so your front desk, events team, and restaurant floor stay
+          perfectly in sync.
+        </p>
       </div>
 
-      <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
         {FEATURES.map((f) => (
-          <div key={f.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md hover:shadow-accent-500/10">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cta-from to-cta-to text-white">
-              <f.icon className="h-5.5 w-5.5" />
+          <div
+            key={f.title}
+            className="rounded-[20px] border border-slate-100 bg-white p-[30px] transition duration-200 hover:-translate-y-1.5 hover:border-accent-500/30 hover:shadow-[0_28px_60px_-22px_rgba(76,29,149,0.35)]"
+          >
+            <div className={`mb-5 flex h-[54px] w-[54px] items-center justify-center rounded-2xl bg-gradient-to-br ${f.bg} text-2xl`}>
+              {f.emoji}
             </div>
-            <h3 className="mt-4 text-base font-bold text-slate-900">{f.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600">{f.desc}</p>
+            <h3 className="mb-2.5 text-xl font-bold text-slate-900">{f.title}</h3>
+            <p className="text-[15px] leading-relaxed text-slate-600">{f.desc}</p>
           </div>
         ))}
       </div>
