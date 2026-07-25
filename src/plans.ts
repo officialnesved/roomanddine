@@ -8,11 +8,11 @@ export const PLANS = [
     price: 10000,
     recommended: false,
     features: [
-      'Table & guest orders',
+      'Table & QR guest self-ordering',
+      'Live Kitchen Display board',
       'Food menu & KOT',
       'Thermal GST bills',
-      'Sales history & reports',
-      'Inventory management',
+      'Sales history & inventory',
     ],
   },
   {
@@ -24,9 +24,9 @@ export const PLANS = [
     features: [
       'Room, banquet & lawn bookings',
       'Calendar & availability',
-      'Quotations & GST invoices',
+      'Quotations, catering & GST invoices',
       'Guest CRM & payments',
-      'Staff & role management',
+      'Staff activity & role management',
     ],
   },
   {
