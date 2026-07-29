@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom'
 
-const POS_RELEASES_URL = 'https://github.com/officialnesved/kittosappe-releases/releases/latest'
+// Direct-download links (not the /releases/latest page) so clicking starts
+// the file downloading immediately. These filenames are version-free
+// (KitoosAppe-win.exe / KitoosAppe-linux.deb), so they keep working across
+// future releases without needing to update this file each time — as long
+// as new releases also upload a copy under these exact stable names.
+const POS_WINDOWS_URL = 'https://github.com/officialnesved/kittosappe-releases/releases/latest/download/KitoosAppe-win.exe'
+const POS_LINUX_URL = 'https://github.com/officialnesved/kittosappe-releases/releases/latest/download/KitoosAppe-linux.deb'
 
 function WindowsIcon() {
   return (
@@ -46,18 +52,14 @@ export function Footer() {
           <div className="mb-3.5 text-[15px] font-bold text-white">POS</div>
           <div className="flex flex-col gap-2.5 text-sm">
             <a
-              href={POS_RELEASES_URL}
-              target="_blank"
-              rel="noreferrer"
+              href={POS_WINDOWS_URL}
               className="flex items-center gap-2 text-[#9993ad] hover:text-white"
             >
               <WindowsIcon />
               Download for Windows
             </a>
             <a
-              href={POS_RELEASES_URL}
-              target="_blank"
-              rel="noreferrer"
+              href={POS_LINUX_URL}
               className="flex items-center gap-2 text-[#9993ad] hover:text-white"
             >
               <LinuxIcon />
