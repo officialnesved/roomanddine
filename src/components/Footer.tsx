@@ -1,9 +1,27 @@
 import { Link } from 'react-router-dom'
 
+const POS_RELEASES_URL = 'https://github.com/officialnesved/kittosappe-releases/releases/latest'
+
+function WindowsIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M3 5.5 10.5 4.4V11.5H3V5.5ZM11.5 4.25 21 3V11.5H11.5V4.25ZM3 12.5H10.5V19.6L3 18.5V12.5ZM11.5 12.5H21V21L11.5 19.75V12.5Z" />
+    </svg>
+  )
+}
+
+function LinuxIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 2c-1.66 0-3 1.79-3 4 0 1.33.47 2.5 1.18 3.24-.6.4-1.18.98-1.68 1.76C7.13 12.5 6 14.5 6 16.5c0 2.5 2.69 4.5 6 4.5s6-2 6-4.5c0-2-1.13-4-2.5-5.5-.5-.78-1.08-1.36-1.68-1.76C14.53 8.5 15 7.33 15 6c0-2.21-1.34-4-3-4Zm-1.2 12.3c.36.28.78.45 1.2.45s.84-.17 1.2-.45c.24.32.5.83.5 1.2 0 .77-.76 1.5-1.7 1.5s-1.7-.73-1.7-1.5c0-.37.26-.88.5-1.2Z" />
+    </svg>
+  )
+}
+
 export function Footer() {
   return (
     <footer className="bg-[#1e1b2e] px-5 pb-8 pt-[60px] text-[#c4c0d4]">
-      <div className="mx-auto grid max-w-[1120px] grid-cols-2 gap-10 sm:grid-cols-4">
+      <div className="mx-auto grid max-w-[1120px] grid-cols-2 gap-10 sm:grid-cols-5">
         <div className="col-span-2 sm:col-span-1">
           <div className="mb-4 flex items-center gap-2.5">
             <img src="/logo-mark.png" alt="" className="h-7 w-auto" />
@@ -21,6 +39,30 @@ export function Footer() {
             <a href="#solutions" className="text-[#9993ad] hover:text-white">Solutions</a>
             <a href="#pricing" className="text-[#9993ad] hover:text-white">Pricing</a>
             <a href="#faq" className="text-[#9993ad] hover:text-white">FAQ</a>
+          </div>
+        </div>
+
+        <div>
+          <div className="mb-3.5 text-[15px] font-bold text-white">POS</div>
+          <div className="flex flex-col gap-2.5 text-sm">
+            <a
+              href={POS_RELEASES_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 text-[#9993ad] hover:text-white"
+            >
+              <WindowsIcon />
+              Download for Windows
+            </a>
+            <a
+              href={POS_RELEASES_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 text-[#9993ad] hover:text-white"
+            >
+              <LinuxIcon />
+              Download for Linux
+            </a>
           </div>
         </div>
 
